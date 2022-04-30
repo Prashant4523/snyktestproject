@@ -29,10 +29,10 @@ function Navbar() {
 
                                     </li>
                                     <li className="nav-item ">
-                                        <a href="" title="Inventory Management" className="submenu-web">
+                                        <Link href={base_url + '/test'} title="Inventory Management" className="submenu-web">
                                             <img src="./assets/image/dark-flower.jpg" alt=""/>
-                                            <span >Inventory Management</span>
-                                        </a>
+                                            <span >Account</span>
+                                        </Link>
                                         <a href="" title="Inventory Management" className="submenu-reponsive">
                                             <img src="./assets/image/dark-flower.jpg" alt=""/>
                                             <span >IM</span>

@@ -24,6 +24,16 @@ Route::get('/category', 'Admin\IndexController@category')->name('admin.category'
 //     return Inertia::render('Category');
 // });
 
+Route::get('/test', 'Admin\TestController@index')->name('admin.test');
+Route::get('/test/list', 'Admin\TestController@getList')->name('admin.test.list');
+Route::post('/test/store', 'Admin\TestController@store')->name('admin.test-data-store');
+
+
+Route::post('/store', [
+    'uses' => 'Admin\TestController@store',
+    'as' => 'admin-user-management-store',
+]);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

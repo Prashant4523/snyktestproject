@@ -5,9 +5,9 @@ function AppLayout(props) {
     return (
         <Fragment>
             <Header></Header>
-            <div class="landing-page" id="landing-page">
-                <div class="container-fluid">
-                    <div class="lnw-body-dashboard" >
+            <div className="landing-page" id="landing-page">
+                <div className="container-fluid">
+                    <div className="lnw-body-dashboard" >
                         {props.children}
                     </div>
                 </div>

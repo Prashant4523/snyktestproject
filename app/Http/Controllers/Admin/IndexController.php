@@ -14,6 +14,7 @@ class IndexController extends Controller
     }
 
     public function category(){
+        return Inertia::render('Test/TestList');
         return Inertia::render('Category');
     }
 }
