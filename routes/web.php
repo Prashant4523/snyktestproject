@@ -27,6 +27,7 @@ Route::get('/category', 'Admin\IndexController@category')->name('admin.category'
 Route::get('/test', 'Admin\TestController@index')->name('admin.test');
 Route::get('/test/list', 'Admin\TestController@getList')->name('admin.test.list');
 Route::post('/test/store', 'Admin\TestController@store')->name('admin.test-data-store');
+Route::get('/contact', 'Admin\TestController@contact')->name('admin.contact');
 
 
 Route::post('/store', [

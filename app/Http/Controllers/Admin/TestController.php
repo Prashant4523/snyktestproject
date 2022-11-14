@@ -38,4 +38,9 @@ class TestController extends Controller
         ]);
         return Inertia::render('Test/TestList');
     }
+
+    public function contact(){
+        $title = "Contact";
+        return Inertia::render('Test/Contact',compact('title'));
+    }
 }

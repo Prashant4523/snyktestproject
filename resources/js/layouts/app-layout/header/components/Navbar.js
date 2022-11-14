@@ -151,8 +151,11 @@ function Navbar() {
                                         </div>
                                     </li>
 
-                                    <li className="nav-item">
-                                        <a className=" " href="#" > <i className="fa fa-phone dropdown-icon" aria-hidden="true"></i>Contact</a>
+                                    <li className="nav-item ">
+                                        <Link href={base_url + '/contact'} title="Inventory Management" className="submenu-web">
+                                            <img src="./assets/image/dark-flower.jpg" alt=""/>
+                                            <span >Contact</span>
+                                        </Link>
                                     </li>
                                     <li className="nav-item">
                                         <a className=" " href="#">DearTeam</a>
