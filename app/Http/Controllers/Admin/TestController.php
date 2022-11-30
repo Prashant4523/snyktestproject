@@ -6,9 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Models\Test;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+// use App\Interfaces\ContactInterface;
+use App\Interfaces\TestInterface;
 
 class TestController extends Controller
 {
+    private $testInterface;
+
+    public function __construct(TestInterface $testInterface)
+    {
+        $this->testInterface = $testInterface;
+    }
+
     public function index(){
         $title = "Account";
         return Inertia::render('Test/Test',compact('title'));
@@ -16,11 +25,7 @@ class TestController extends Controller
 
     public function store(Request $request){
 
-        Test::create([
-            'name' => $request->companyName,
-            'print_name' => $request->printName,
-            'date' => $request->date
-        ]);
+        $this->testInterface->createTest($request);
 
         return Inertia::render('Test/TestList');
 
@@ -31,12 +36,12 @@ class TestController extends Controller
     }
 
     public function getList(){
-        $tests = Test::select('name','print_name')->get();
+        $tests = $this->testInterface->getAllTests();
         return response()->json([
             'success' => true,
             'data' => $tests,
         ]);
-        return Inertia::render('Test/TestList');
+        // return Inertia::render('Test/TestList');
     }
 
     public function contact(){
